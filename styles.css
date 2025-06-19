@@ -12,7 +12,7 @@ html {
 }
 
 .background {
-    background: url(ima/fondoo.jpg) no-repeat center center;
+    background: url(fondoo.jpg) no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     background-color: #0e172a;
