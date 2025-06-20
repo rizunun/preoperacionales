@@ -18,35 +18,7 @@ body {
 /* =========================
    BARRA SUPERIOR (HEADER)
 ========================= */
-.top-bar {
-    background-color: #e5e5e5;
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-
-}
-
-.logo {
-    height: 40px;
-}
-
-.hamburger {
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-
-/* =========================
-   SIDEBAR / MENÚ LATERAL
-========================= */
+/* Sidebar estilo referencia */
 .sidebar {
     position: fixed;
     top: 0;
@@ -76,7 +48,8 @@ body {
     background-color: white;
     border-radius: 50%;
     margin: 15px auto;
-    background-image: url('ima/profile-placeholder.png');
+    cursor: pointer;
+    background-image: url('profile-placeholder.png');
     background-size: cover;
     background-position: center;
 }
@@ -267,6 +240,9 @@ p {
     cursor: pointer;
 }
 
+.close:hover {
+    color: #000;
+}
 .close:hover {
     color: #000;
 }
