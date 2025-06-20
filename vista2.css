@@ -9,7 +9,7 @@
 }
 
 body {
-    background: url('ima/fondo2.png') no-repeat center center fixed;
+    background: url('fondo2.png') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     position: relative;
@@ -86,7 +86,7 @@ body {
     border-radius: 50%;
     margin: 15px auto;
     cursor: pointer;
-    background-image: url('ima/profile-placeholder.png');
+    background-image: url('profile-placeholder.png');
     background-size: cover;
     background-position: center;
 }
