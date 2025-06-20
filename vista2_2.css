@@ -283,7 +283,7 @@ body {
 
 /* Contenido principal */
 .main {
-    padding: 20px;
+    padding: 90px 20px 20px 20px; /* 90px arriba para compensar el header fijo */
 }
 
 .titulo {
