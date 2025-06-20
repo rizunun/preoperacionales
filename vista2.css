@@ -9,13 +9,10 @@
 }
 
 body {
-    background: url('fondo2.png') no-repeat center center fixed;
+    background: url('ima/fondo2.png') no-repeat center center fixed;
     background-size: cover;
-    min-height: 100vh;
-}
-
-body {
     background-color: #f3f3f3;
+    min-height: 100vh;
 }
 
 
@@ -29,6 +26,11 @@ body {
     align-items: center;
     padding: 10px 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
 }
 
 .logo {
@@ -57,10 +59,19 @@ body {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     z-index: 100;
     overflow-y: auto;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
 }
 
 .hidden {
-    display: none;
+    transform: translateX(-100%);
+}
+
+/* Sidebar responsive para móvil */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80%;
+    }
 }
 
 .logo-menu {
@@ -71,7 +82,7 @@ body {
 
 .profile-pic {
     width: 9vw;
-    height: 9vw;
+    aspect-ratio: 1 / 1;
     background-color: white;
     border-radius: 50%;
     margin: 15px auto;
@@ -153,7 +164,7 @@ body {
    CONTENIDO PRINCIPAL
 ========================= */
 .main-content {
-    padding: 30px 5%;
+    padding: 100px 5% 30px; /* deja espacio para el header */
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -177,20 +188,22 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: 8vh;
     cursor: pointer;
+    transition: transform 0.2s ease-in-out;
 }
 
 .btn:hover {
     background-color: #2373a8;
-    width: 110%;
-    max-width: 720px;
+    transform: scale(1.03);
+    max-width: 700px;
 }
 
 .icon-wrapper {
     background-color: white;
     color: #00558f;
     border-radius: 50%;
+    aspect-ratio: 1 / 1;
     width: 12vh;
-    height: 12vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -202,12 +215,57 @@ body {
 /* =========================
    RESPONSIVE DESIGN
 ========================= */
+@media (max-width: 1024px) {
+    .main-content {
+        padding: 90px 5% 20px;
+    }
+    .btn {
+        font-size: 4vh;
+    }
+    .icon-wrapper {
+        width: 8vh;
+        font-size: 4vh;
+        margin-right: 2vw;
+    }
+}
+
 @media (max-width: 768px) {
     .main-content {
         align-items: center;
+        padding: 80px 4% 20px;
     }
 
     .btn {
         width: 90%;
+        height: auto;
+        padding: 15px;
+        font-size: 1.4rem;
+        border-radius: 20px;
+        margin-top: 4vh;
+    }
+
+    .icon-wrapper {
+        width: 60px;
+        font-size: 1.5rem;
+        margin-right: 2vw;
+    }
+
+    .logo-menu {
+        width: 70px;
+    }
+
+    .sidebar button {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .btn {
+        font-size: 2rem;
+    }
+    .icon-wrapper {
+        width: 90px;
+        font-size: 2.2rem;
     }
 }
