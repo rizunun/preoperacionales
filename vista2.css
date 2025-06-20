@@ -74,10 +74,14 @@ body {
 }
 
 .logo-menu {
-    width: 8vw;
-    margin: 10px auto;
-    display: block;
+    width: 100px;                /* tamaño base razonable */
+    max-width: 60%;              /* límite proporcional adaptable */
+    height: auto;                /* mantiene proporciones del logo */
+    display: block;              /* permite centrar con margin auto */
+    margin: 0 auto 20px auto;    /* centrado + espacio abajo */
+    object-fit: contain;         /* asegura que nunca se deforme */
 }
+
 
 .profile-pic {
     width: 9vw;
