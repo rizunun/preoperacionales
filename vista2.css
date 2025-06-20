@@ -9,10 +9,11 @@
 }
 
 body {
-    background: url('fondo2.png') no-repeat center center fixed;
+    background: url('ima/fondo2.png') no-repeat center center fixed;
     background-size: cover;
-    background-color: #f3f3f3;
     min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
 }
 
 
@@ -31,6 +32,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 999;
+    height: 70px;
 }
 
 .logo {
@@ -57,21 +59,18 @@ body {
     background-color: #1575b4;
     padding: 20px 15px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    z-index: 100;
+    z-index: 1000;
     overflow-y: auto;
+    transform: translateX(-100%);
     transition: transform 0.3s ease;
+}
+
+.sidebar.active {
     transform: translateX(0);
 }
 
 .hidden {
-    transform: translateX(-100%);
-}
-
-/* Sidebar responsive para móvil */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 80%;
-    }
+    display: none;
 }
 
 .logo-menu {
@@ -82,7 +81,7 @@ body {
 
 .profile-pic {
     width: 9vw;
-    aspect-ratio: 1 / 1;
+    height: 9vw;
     background-color: white;
     border-radius: 50%;
     margin: 15px auto;
@@ -96,6 +95,7 @@ body {
 .sidebar p {
     text-align: center;
     margin-top: 5px;
+    color: white;
 }
 
 .sidebar button {
@@ -161,14 +161,37 @@ body {
 
 
 /* =========================
+   FONDO OPACO AL ABRIR MENU
+========================= */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+
+/* =========================
    CONTENIDO PRINCIPAL
 ========================= */
 .main-content {
-    padding: 100px 5% 30px; /* deja espacio para el header */
+    padding-top: 90px;
+    padding-left: 5%;
+    padding-right: 5%;
     display: flex;
     flex-direction: column;
     gap: 30px;
     align-items: center;
+    min-height: 100vh;
+    justify-content: space-evenly;
 }
 
 .btn {
@@ -176,7 +199,7 @@ body {
     max-width: 700px;
     height: 15vh;
     padding: 20px 25px;
-    font-size: 5vh;
+    font-size: 3.5vh;
     border: none;
     border-radius: 3vh;
     background-color: #00558f;
@@ -186,24 +209,19 @@ body {
     text-align: left;
     gap: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 8vh;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out;
 }
 
 .btn:hover {
     background-color: #2373a8;
-    transform: scale(1.03);
-    max-width: 700px;
 }
 
 .icon-wrapper {
     background-color: white;
     color: #00558f;
     border-radius: 50%;
-    aspect-ratio: 1 / 1;
     width: 12vh;
-    height: auto;
+    height: 12vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -215,57 +233,26 @@ body {
 /* =========================
    RESPONSIVE DESIGN
 ========================= */
-@media (max-width: 1024px) {
-    .main-content {
-        padding: 90px 5% 20px;
-    }
-    .btn {
-        font-size: 4vh;
-    }
-    .icon-wrapper {
-        width: 8vh;
-        font-size: 4vh;
-        margin-right: 2vw;
-    }
-}
-
 @media (max-width: 768px) {
-    .main-content {
-        align-items: center;
-        padding: 80px 4% 20px;
-    }
-
     .btn {
-        width: 90%;
+        font-size: 2.8vh;
         height: auto;
         padding: 15px;
-        font-size: 1.4rem;
-        border-radius: 20px;
-        margin-top: 4vh;
     }
 
     .icon-wrapper {
-        width: 60px;
-        font-size: 1.5rem;
-        margin-right: 2vw;
+        width: 10vh;
+        height: 10vh;
+        font-size: 5vh;
     }
 
-    .logo-menu {
-        width: 70px;
+    .sidebar {
+        width: 70vw;
     }
 
-    .sidebar button {
-        font-size: 13px;
-        padding: 8px 12px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .btn {
-        font-size: 2rem;
-    }
-    .icon-wrapper {
-        width: 90px;
-        font-size: 2.2rem;
+    .logo-menu,
+    .profile-pic {
+        width: 30vw;
+        height: 30vw;
     }
 }
