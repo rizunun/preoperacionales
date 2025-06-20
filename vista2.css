@@ -9,7 +9,7 @@
 }
 
 body {
-    background: url('ima/fondo2.png') no-repeat center center fixed;
+    background: url('fondo2.png') no-repeat center center fixed;
     background-size: cover;
     background-color: #f3f3f3;
     min-height: 100vh;
