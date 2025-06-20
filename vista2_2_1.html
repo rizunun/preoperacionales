@@ -17,18 +17,31 @@
     </header>
 
     <!-- Sidebar lateral oculto -->
-    <aside id="sidebar" class="sidebar hidden">
-        <button id="cerrarside" class="close-btn" onclick="toggleMenu()">&times;</button>
-        <img src="logo.png" class="logo-menu" alt="Logo THOR">
-        <div class="profile-pic"></div>
-        <h3>Nombre Completo</h3>
-        <p>C.C. 1234567890<br>Cargo</p>
+    <aside id="sidebar" class="sidebar">
+        <!-- Logo + cerrar -->
+        <div class="sidebar-header">
+            <img src="logo.png" class="logo-menu" alt="Logo THOR" />
+            <button id="cerrarside" onclick="closeMenu()">&times;</button>
+        </div>
 
-        <button onclick="location.href='vista2.html'" id="btn-side"><span class="icon">🏠</span> Inicio</button>
-        <button onclick="location.href='vista2_2.html'" id="btn-side"><span class="icon">⚙️</span> Equipos</button>
-        <button onclick="location.href='vista2_3.html'" id="btn-side"><span class="icon">📄</span> Diligenciar
-            Preoperacionales</button>
+        <!-- Usuario -->
+        <div class="sidebar-user">
+            <div class="profile-pic" onclick="location.href='vista2_1.html'"></div>
+            <h3>Nombre Completo</h3>
+            <p>C.C. 1234567890<br />Cargo</p>
+        </div>
 
+        <!-- Botones -->
+        <div class="sidebar-buttons">
+            <button onclick="location.href='vista2.html'"><span class="icon">🏠</span>
+                Inicio</button>
+            <button onclick="location.href='vista2_2.html'"><span class="icon">⚙️</span> Equipos</button>
+            <button onclick="location.href='vista2_3.html'" style="text-align: left;"><span class="icon">📄</span>
+                Diligenciar
+                Preoperacionales</button>
+        </div>
+
+        <!-- Cerrar sesión -->
         <button id="logout" onclick="location.href='index.html'">⬅ cerrar sesión</button>
     </aside>
     <!-- Contenido principal -->
@@ -65,10 +78,18 @@
     </div>
     <!-- side bar -->
     <script>
-        function toggleMenu() {
-            document.getElementById('sidebar').classList.toggle('hidden');
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("overlay");
+
+        document.getElementById("menu-toggle").addEventListener("click", () => {
+            sidebar.classList.add("active");
+            overlay.classList.add("active");
+        });
+
+        function closeMenu() {
+            sidebar.classList.remove("active");
+            overlay.classList.remove("active");
         }
-        document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
     </script>
 </body>
 
