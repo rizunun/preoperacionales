@@ -212,6 +212,25 @@
             });
         });
     </script>
+     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const fechaMantenimiento = localStorage.getItem("ultimoMantenimiento");
+
+            if (fechaMantenimiento) {
+                const fechaUltimo = new Date(fechaMantenimiento);
+                const hoy = new Date();
+
+                // Suma 3 meses
+                const fechaLimite = new Date(fechaUltimo);
+                fechaLimite.setMonth(fechaUltimo.getMonth() + 3);
+
+                if (hoy > fechaLimite) {
+                    // Está vencido, redirige a No.html
+                    window.location.href = "No.html";
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
