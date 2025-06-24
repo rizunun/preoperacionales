@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equipos</title>
+    <link rel="stylesheet" href="vista2_3_1.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="icon" href="ima/favicon.png" type="image/png" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="top-bar">
+        <button id="menu-toggle" class="hamburger">&#9776;</button>
+        <img src="ima/logo.png" class="logo" alt="Logo" />
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <img src="ima/logo.png" class="logo-menu" alt="Logo THOR" />
+            <button id="cerrarside" onclick="closeMenu()">&times;</button>
+        </div>
+
+        <div class="sidebar-user">
+            <div class="profile-pic" onclick="location.href='vista2_1.html'"></div>
+            <h3>Nombre Completo</h3>
+            <p>C.C. 1234567890<br />Cargo</p>
+        </div>
+
+        <div class="sidebar-buttons">
+            <button onclick="location.href='vista2.html'"><span class="icon">🏠</span>Inicio</button>
+            <button onclick="location.href='vista2_2.html'"><span class="icon">⚙️</span>Equipos</button>
+            <button onclick="location.href='vista2_3.html'"><span class="icon">📄</span>Diligenciar
+                Preoperacionales</button>
+        </div>
+
+        <button id="logout" onclick="location.href='index.html'">⬅ cerrar sesión</button>
+    </aside>
+
+    <!-- OVERLAY -->
+    <div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="preoperacional-main">
+        <button class="btn-anterior" onclick="history.back()">⬅ Anterior</button>
+        <div class="section-header">
+            <span class="icon">📋</span> Diligenciar preoperacional
+        </div>
+
+        <div class="equipo-info">
+            <div class="icon-circle yellow">
+                <div class="icon-circle" style="background: #faff75;">&#9651;</div>
+            </div>
+            <div class="info-text">
+                <strong>Compresor tornillo rotativo</strong><br />
+                4852297<br />
+                Kaeser
+            </div>
+        </div>
+
+        <div class="extra-info">
+            <span>24/06/2025</span>
+            <span>Bodega 98 TDE</span>
+        </div>
+
+        <form class="formulario">
+            <!-- Preguntas -->
+            <div class="pregunta">
+                <p>1.1 Compruebe el estado de la conexión eléctrica</p>
+                <label><input type="radio" name="p1" value="cumple"> Cumple</label>
+                <label><input type="radio" name="p1" value="no-cumple"> No cumple</label>
+                <label><input type="radio" name="p1" value="no-aplica"> No aplica</label>
+                <div class="contenedor-plan"></div>
+            </div>
+
+            <div class="pregunta">
+                <p>1.2 Verifique el estado de los niveles de aceite</p>
+                <label><input type="radio" name="p2" value="cumple"> Cumple</label>
+                <label><input type="radio" name="p2" value="no-cumple"> No cumple</label>
+                <label><input type="radio" name="p2" value="no-aplica"> No aplica</label>
+                <div class="contenedor-plan"></div>
+            </div>
+
+            <div class="pregunta">
+                <p>1.3 Inspeccione visualmente el sistema de refrigeración</p>
+                <label><input type="radio" name="p3" value="cumple"> Cumple</label>
+                <label><input type="radio" name="p3" value="no-cumple"> No cumple</label>
+                <label><input type="radio" name="p3" value="no-aplica"> No aplica</label>
+                <div class="contenedor-plan"></div>
+            </div>
+
+            <div class="pregunta">
+                <p>1.4 Revise el estado de las correas o bandas</p>
+                <label><input type="radio" name="p4" value="cumple"> Cumple</label>
+                <label><input type="radio" name="p4" value="no-cumple"> No cumple</label>
+                <label><input type="radio" name="p4" value="no-aplica"> No aplica</label>
+                <div class="contenedor-plan"></div>
+            </div>
+
+            <div class="pregunta">
+                <p>1.5 Verifique que no haya fugas de aire o aceite</p>
+                <label><input type="radio" name="p5" value="cumple"> Cumple</label>
+                <label><input type="radio" name="p5" value="no-cumple"> No cumple</label>
+                <label><input type="radio" name="p5" value="no-aplica"> No aplica</label>
+                <div class="contenedor-plan"></div>
+            </div>
+
+            <div class="pregunta">
+                <p>1.6 Compruebe que los filtros estén en buen estado</p>
+                <label><input type="radio" name="p6" value="cumple"> Cumple</label>
+                <label><input type="radio" name="p6" value="no-cumple"> No cumple</label>
+                <label><input type="radio" name="p6" value="no-aplica"> No aplica</label>
+                <div class="contenedor-plan"></div>
+            </div>
+
+            <div class="pregunta">
+                <p>1.7 Inspeccione los acoplamientos y conexiones eléctricas</p>
+                <label><input type="radio" name="p7" value="cumple"> Cumple</label>
+                <label><input type="radio" name="p7" value="no-cumple"> No cumple</label>
+                <label><input type="radio" name="p7" value="no-aplica"> No aplica</label>
+                <div class="contenedor-plan"></div>
+            </div>
+
+            <div class="pregunta">
+                <p>1.8 Revise el panel de control y sus indicadores</p>
+                <label><input type="radio" name="p8" value="cumple"> Cumple</label>
+                <label><input type="radio" name="p8" value="no-cumple"> No cumple</label>
+                <label><input type="radio" name="p8" value="no-aplica"> No aplica</label>
+                <div class="contenedor-plan"></div>
+            </div>
+
+            <div class="pregunta">
+                <p>1.9 Verifique que no existan ruidos anormales al encender</p>
+                <label><input type="radio" name="p9" value="cumple"> Cumple</label>
+                <label><input type="radio" name="p9" value="no-cumple"> No cumple</label>
+                <label><input type="radio" name="p9" value="no-aplica"> No aplica</label>
+                <div class="contenedor-plan"></div>
+            </div>
+
+            <button type="submit" class="enviar-btn">ENVIAR</button>
+        </form>
+
+        <!-- Template de Plan de Acción -->
+        <template id="template-plan-accion">
+            <div class="plan-accion">
+                <h4>Plan de acción</h4>
+                <label>Descripción de la no conformidad:<input type="text" placeholder="Escriba aquí"></label>
+                <label>Acciones a seguir:<input type="text" placeholder="Escriba aquí"></label>
+                <label>Responsable de la ejecución:
+                    <select>
+                        <option>Seleccione...</option>
+                        <option>Jefferson Hernández</option>
+                        <option>Ximena Pérez</option>
+                        <option>Camila Pinzón</option>
+                    </select>
+                </label>
+                <label>Fecha programada de ejecución:<input type="date"></label>
+                <label>Responsable de seguimiento:
+                    <select>
+                        <option>Seleccione...</option>
+                        <option>Jefferson Hernández</option>
+                        <option>Ximena Pérez</option>
+                        <option>Camila Pinzón</option>
+                    </select>
+                </label>
+                <label>Subir evidencia fotográfica:
+                    <input type="file" accept="image/*" capture="environment">
+                </label>
+            </div>
+        </template>
+    </main>
+
+    <!-- JS SIDEBAR -->
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("overlay");
+
+        document.getElementById("menu-toggle").addEventListener("click", () => {
+            sidebar.classList.add("active");
+            overlay.classList.add("active");
+        });
+
+        function closeMenu() {
+            sidebar.classList.remove("active");
+            overlay.classList.remove("active");
+        }
+    </script>
+
+    <!-- JS PLAN DE ACCIÓN REUTILIZABLE -->
+    <script>
+        function mostrarPlan(radio) {
+            const pregunta = radio.closest(".pregunta");
+            const contenedor = pregunta.querySelector(".contenedor-plan");
+            contenedor.innerHTML = "";
+
+            if (radio.value === "no-cumple") {
+                const template = document.getElementById("template-plan-accion");
+                const clone = template.content.cloneNode(true);
+                contenedor.appendChild(clone);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const radios = document.querySelectorAll(".pregunta input[type=radio]");
+            radios.forEach(radio => {
+                radio.addEventListener("change", function () {
+                    mostrarPlan(this);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

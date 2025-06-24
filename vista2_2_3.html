@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalle Equipo</title>
+    <link rel="stylesheet" href="vista2_2_1.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="icon" href="ima/favicon.png" type="image/png" />
+</head>
+
+<body>
+    <!-- Barra superior -->
+    <header class="top-bar">
+        <button id="menu-toggle" class="hamburger">&#9776;</button>
+        <img src="ima/logo.png" class="logo" alt="Logo" />
+    </header>
+
+    <!-- Sidebar lateral oculto -->
+    <aside id="sidebar" class="sidebar">
+        <!-- Logo + cerrar -->
+        <div class="sidebar-header">
+            <img src="ima/logo.png" class="logo-menu" alt="Logo THOR" />
+            <button id="cerrarside" onclick="closeMenu()">&times;</button>
+        </div>
+
+        <!-- Usuario -->
+        <div class="sidebar-user">
+            <div class="profile-pic" onclick="location.href='vista2_1.html'"></div>
+            <h3>Nombre Completo</h3>
+            <p>C.C. 1234567890<br />Cargo</p>
+        </div>
+
+        <!-- Botones -->
+        <div class="sidebar-buttons">
+            <button onclick="location.href='vista2.html'"><span class="icon">🏠</span>
+                Inicio</button>
+            <button onclick="location.href='vista2_2.html'"><span class="icon">⚙️</span> Equipos</button>
+            <button onclick="location.href='vista2_3.html'" style="text-align: left;"><span class="icon">📄</span>
+                Diligenciar
+                Preoperacionales</button>
+        </div>
+
+        <!-- Cerrar sesión -->
+        <button id="logout" onclick="location.href='index.html'">⬅ cerrar sesión</button>
+    </aside>
+    <div id="overlay" class="overlay" onclick="closeMenu()"></div>
+    <!-- Contenido principal -->
+    <main class="detail" style="margin-top: 70px;">
+        <button class="btn-anterior" onclick="history.back()">⬅ Anterior</button>
+        <div class="icon-large">
+            <div class="circle-icon" style="background: #ff1b1b;">&#128308;</div>
+        </div>
+        <h2>Compresor tornillo rotativo</h2>
+        <p><strong>Serial:</strong> 8304585</p>
+        <p><strong>Marca:</strong> Kaeser</p>
+        <p><strong>Ultimo mantenimiento:</strong> 15/05/2025</p>
+        <button class="pdf-btn" onclick="document.getElementById('pdfModal').style.display='block'">
+            visualizar pdf
+        </button>
+
+        <br><br>
+        <button class="preop-btn" style="cursor: auto;"><span class="icon">📄</span> Preoperacionales</button>
+        <br><br>
+        <p>Preoperacional turno mañana</p>
+        <div class="img-placeholder">aqui se pone una imagen</div>
+        <br><br>
+        <p>Preoperacional turno tarde</p>
+        <div class="img-placeholder">aqui se pone una imagen</div>
+        <br><br>
+        <p>Preoperacional turno noche</p>
+        <div class="img-placeholder">aqui se pone una imagen</div>
+        <br> <br>
+        <button class="preop-btn1" onclick="location.href='vista2_3_3.html'"
+            style="text-align: center; cursor: pointer;"><span class="icon">📄</span> Diligenciar
+            preoperacional</button>
+    </main>
+    <!-- Modal PDF -->
+    <div id="pdfModal" class="modal" onclick="if(event.target == this) this.style.display='none'">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('pdfModal').style.display='none'">&times;</span>
+            <iframe src="ima/pdf.pdf" frameborder="0"></iframe>
+        </div>
+    </div>
+    <!-- side bar -->
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("overlay");
+
+        document.getElementById("menu-toggle").addEventListener("click", () => {
+            sidebar.classList.add("active");
+            overlay.classList.add("active");
+        });
+
+        function closeMenu() {
+            sidebar.classList.remove("active");
+            overlay.classList.remove("active");
+        }
+    </script>
+</body>
+
+</html>
