@@ -220,18 +220,26 @@ body {
 }
 
 .icon-wrapper {
-    background-color: white;
-    color: #00558f;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    flex-shrink: 0;
+  background-color: white;
+  color: #00558f;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 3vw;
 }
 
+/* Cuando la pantalla es grande (como en computador) */
+@media screen and (min-width: 768px) {
+  .icon-wrapper {
+    width: 90px;
+    height: 90px;
+    font-size: 2.8rem;
+  }
+}
 .btn:hover {
     background-color: #2373a8;
 }
