@@ -429,10 +429,9 @@ p {
 
 .modal-img-container {
     position: relative;
-    display: inline-block;
     width: 100%;
-    max-width: 100%;
-    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .modal-preop-img {
@@ -480,10 +479,12 @@ p {
 
 .nc-tooltip img {
     width: 100%;
-    margin-top: 10px;
-    border-radius: 6px;
-    max-height: 150px;
+    height: auto;
+    max-height: 200px;
     object-fit: contain;
+    margin-top: 8px;
+    border-radius: 5px;
+    display: block;
 }
 
 /* Responsive para celular */
@@ -502,6 +503,11 @@ p {
         left: 50%;
         transform: translateX(-50%);
         max-width: 90vw;
+    }
+
+    .nc-tooltip {
+        overflow: auto;
+        max-height: 60vh;
     }
 }
 
@@ -648,4 +654,70 @@ p {
     color: #a00;
     cursor: pointer;
     margin-top: 5px;
+}
+
+/* Estilos para el botón NC en modal */
+.nc-marker {
+    position: absolute;
+    top: 44.3%;
+    left: 72.6%;
+    width: 40px;
+    height: 24px;
+    background-color: red;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Tooltip de NC */
+.nc-tooltip {
+    position: absolute;
+    top: 38%;
+    left: 80%;
+    transform: translateX(10px);
+    display: none;
+    background-color: #ffe6e6;
+    padding: 12px;
+    border: 1px solid #ffb3b3;
+    border-radius: 8px;
+    max-width: 250px;
+    font-size: 0.85rem;
+    z-index: 20;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.nc-tooltip img {
+    width: 100%;
+    margin-top: 8px;
+    border-radius: 5px;
+}
+
+/* Responsividad para móvil */
+@media (max-width: 768px) {
+    .nc-marker {
+        top: 44.1%;
+        left: 72.6%;
+        width: 28px;
+        height: 18px;
+        font-size: 0.65rem;
+    }
+
+    .nc-tooltip {
+        position: absolute;
+        top: 35%;
+        left: 10%;
+        right: 10%;
+        transform: none;
+        max-width: none;
+        width: 80vw;
+        font-size: 0.75rem;
+        padding: 10px;
+    }
 }
