@@ -1,0 +1,651 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: url('ima/fondo3.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.btn-anterior {
+    position: absolute;
+    top: 100px;
+    /* Ajusta según diseño */
+    left: 20px;
+    background-color: #00558f;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-anterior:hover {
+    background-color: #2373a8;
+}
+
+
+/* =========================
+   BARRA SUPERIOR (HEADER)
+========================= */
+.top-bar {
+    background-color: #e5e5e5;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+
+}
+
+.logo {
+    height: 40px;
+}
+
+.hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* =========================
+   SIDEBAR / MENÚ LATERAL
+========================= */
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100%;
+    background-color: #1575b4;
+    padding: 0 15px 20px 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+/* Botón de cerrar */
+#cerrarside {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: white;
+    color: #333;
+    font-size: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado del sidebar (LOGO CENTRADO) */
+.sidebar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 20px;
+    flex-direction: column;
+}
+
+.logo-menu {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Profile pic agrandada */
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 10px auto;
+    cursor: pointer;
+    background-image: url('ima/profile-placeholder.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.sidebar h3,
+.sidebar p {
+    text-align: center;
+    color: white;
+    margin-top: 5px;
+}
+
+/* Botones del menú (más separados) */
+.sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10vh;
+    /* Espacio igual entre todos los botones */
+    margin-top: 20px;
+}
+
+
+.sidebar-buttons button {
+    margin: 0 auto;
+}
+
+.sidebar button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 12px 16px;
+    background-color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 220px;
+    color: #333;
+    height: 45px;
+}
+
+.sidebar button:hover {
+    background-color: #c4e1f3;
+}
+
+.sidebar button .icon {
+    font-size: 18px;
+}
+
+#logout {
+    background-color: #ffb3b3 !important;
+    color: white !important;
+    margin: 30px auto 10px auto;
+    max-width: 220px;
+}
+
+#logout:hover {
+    background-color: #ed4e4e !important;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* =========================
+   CONTENIDO PRINCIPAL
+========================= */
+.detail {
+    text-align: center;
+    padding: 20px;
+}
+
+.icon-large .circle-icon {
+    background-color: #d7df23;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 4rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.pdf-btn {
+    padding: 8px 15px;
+    margin: 10px 0;
+    border: none;
+    background-color: rgb(240, 69, 69);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.pdf-btn:hover {
+    background-color: #a61919;
+    color: white;
+    width: 9vw;
+}
+
+.preop-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #00558f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+.preop-btn1 {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #00558f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+.preop-btn1:hover {
+    background-color: #094369;
+}
+
+.img-placeholder {
+    margin-top: 15px;
+    width: 90%;
+    max-width: 500px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #999;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Modal PDF */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 70vw;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-content iframe {
+    width: 100%;
+    height: 83vh;
+    border: none;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.preop-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.preop-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+
+.section {
+    .modal-content img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+    }
+
+    .nc-button {
+        position: absolute;
+        top: 44.2%;
+        /* Ajusta según tu imagen */
+        left: 72.8%;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        border-radius: 50%;
+        border: 2px solid white;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .tooltip {
+        display: none;
+        position: absolute;
+        top: -160px;
+        left: -100px;
+        background-color: #ffe6e6;
+        padding: 10px;
+        border: 1px solid #ffb3b3;
+        border-radius: 8px;
+        max-width: 250px;
+        font-size: 0.85rem;
+        z-index: 20;
+    }
+
+    .tooltip img {
+        width: 100%;
+        margin-top: 5px;
+        border-radius: 5px;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+    }
+
+    @media (max-width: 768px) {
+        .tooltip {
+            top: -180px;
+            left: -110px;
+        }
+    }
+}
+
+.modal-img-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.modal-preop-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Botón NC flotante */
+.nc-marker {
+    position: absolute;
+    top: 47.3%;
+    left: 77.8%;
+    transform: translate(-50%, -50%);
+    background-color: #f66;
+    color: white;
+    padding: 4px 8px;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    width: 30px;
+    text-align: center;
+}
+
+/* Tooltip NC */
+.nc-tooltip {
+    display: none;
+    position: absolute;
+    top: 47.3%;
+    left: calc(77.8% + 40px);
+    /* aparece al lado del botón */
+    background: #ffdede;
+    color: #000;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    max-width: 250px;
+    z-index: 3;
+    font-size: 14px;
+    transform: translateY(-50%);
+}
+
+.nc-tooltip img {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 6px;
+    max-height: 150px;
+    object-fit: contain;
+}
+
+/* Responsive para celular */
+@media (max-width: 768px) {
+    .nc-marker {
+        top: 47.3%;
+        left: 77.8%;
+        font-size: 10px;
+        padding: 3px 6px;
+        width: 28px;
+    }
+
+    .nc-tooltip {
+        top: auto;
+        bottom: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 90vw;
+    }
+}
+
+
+/* MODAL ESTILOS */
+.modal-preop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-inner {
+    position: relative;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 95%;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+.modal-img-container {
+    position: relative;
+}
+
+.modal-preop-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* NC Botón */
+.nc-marker {
+    position: absolute;
+    top: 44.3%;
+    left: 72.5%;
+    background-color: #ff6666;
+    color: white;
+    font-weight: bold;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Tooltip */
+.nc-tooltip {
+    position: absolute;
+    top: 44.3%;
+    left: 76%;
+    transform: translateY(-50%);
+    background-color: #ffe6e6;
+    border: 1px solid #ffb3b3;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    max-width: 250px;
+    display: none;
+    z-index: 11;
+}
+
+.nc-tooltip img {
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+/* Botón cerrar modal */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #999;
+    font-weight: bold;
+}
+
+.close-modal:hover {
+    color: #000;
+}
+
+
+
+.nc-button {
+    position: absolute;
+    top: 38.5%;
+    left: 79.8%;
+    transform: translate(-50%, -50%);
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    border: 2px solid white;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffe6e6;
+    padding: 10px;
+    border: 1px solid #ffb3b3;
+    border-radius: 8px;
+    max-width: 300px;
+    font-size: 0.85rem;
+    z-index: 20;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.close-btn {
+    display: block;
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    color: #a00;
+    cursor: pointer;
+    margin-top: 5px;
+}
