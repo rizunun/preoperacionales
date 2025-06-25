@@ -1,4 +1,4 @@
-/* RESET Y FUENTE */
+/* RESET Y FUENTE */ 
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +9,6 @@
 .btn-anterior {
     position: absolute;
     top: 100px;
-    /* Ajusta según diseño */
     left: 20px;
     background-color: #00558f;
     color: #ffffff;
@@ -27,7 +26,6 @@
 .btn-anterior:hover {
     background-color: #2373a8;
 }
-
 
 /* HEADER */
 .top-bar {
@@ -251,6 +249,12 @@ body {
     color: #555;
     margin-top: 5px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.formulario {
+    padding-inline: 15px;
 }
 
 .formulario .pregunta {
@@ -339,7 +343,6 @@ body {
     font-size: 2rem;
 }
 
-
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .sidebar {
@@ -358,12 +361,37 @@ body {
     .equipo-info {
         flex-direction: column;
         text-align: center;
+        gap: 8px;
     }
 
     .extra-info {
-        flex-direction: column;
-        gap: 5px;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .extra-info span {
+        width: auto;
+        font-size: 0.85rem;
+    }
+
+    .formulario {
+        padding-inline: 10px;
+    }
+
+    .formulario .pregunta {
+        font-size: 0.9rem;
+    }
+
+    .plan-accion label {
+        font-size: 0.85rem;
+    }
+
+    .plan-accion input,
+    .plan-accion select {
+        font-size: 0.85rem;
+        padding: 8px;
     }
 
     .section-header {
@@ -379,5 +407,11 @@ body {
     .enviar-btn {
         max-width: 300px;
         margin-inline: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .preoperacional-main {
+        padding: 15px 10px;
     }
 }
